@@ -1,0 +1,60 @@
+import { Review } from '@/types';
+
+export const reviews: Review[] = [
+  {
+    id: '1',
+    name: 'Sarah Johnson',
+    rating: 5,
+    text: 'Absolutely fantastic experience! The team was professional, punctual, and the quality of work exceeded our expectations. Our kitchen remodel turned out beautifully, and we could not be happier with the results.',
+    date: '2024-11-15',
+    location: 'Fort Lauderdale, FL',
+  },
+  {
+    id: '2',
+    name: 'Michael Rodriguez',
+    rating: 5,
+    text: 'I hired them for a complete bathroom renovation, and I am thrilled with the outcome. The attention to detail was remarkable, and they stayed within budget and timeline. Highly recommend!',
+    date: '2024-10-22',
+    location: 'Boca Raton, FL',
+  },
+  {
+    id: '3',
+    name: 'Emily Chen',
+    rating: 5,
+    text: 'From the initial consultation to the final walkthrough, everything was seamless. The crew was respectful of our home, cleaned up every day, and the craftsmanship is outstanding. Worth every penny!',
+    date: '2024-09-30',
+    location: 'Hollywood, FL',
+  },
+  {
+    id: '4',
+    name: 'David Thompson',
+    rating: 5,
+    text: 'We had our entire first floor remodeled, including kitchen, living room, and flooring. The transformation is incredible! The project manager kept us informed throughout, and the team was wonderful to work with.',
+    date: '2024-08-18',
+    location: 'Miami, FL',
+  },
+  {
+    id: '5',
+    name: 'Lisa Martinez',
+    rating: 5,
+    text: 'Top-notch professionalism and expertise. They helped us navigate design choices and delivered exactly what we envisioned. Our home addition blends perfectly with the existing structure.',
+    date: '2024-07-25',
+    location: 'Pompano Beach, FL',
+  },
+  {
+    id: '6',
+    name: 'Robert Williams',
+    rating: 5,
+    text: 'Could not ask for a better contractor! They were honest, transparent, and delivered exceptional quality. Our master bathroom is now a luxurious retreat. Thank you for making our dream a reality!',
+    date: '2024-06-12',
+    location: 'Coral Springs, FL',
+  },
+  {
+    id: '7',
+    name: 'Amanda Foster',
+    rating: 5,
+    text: 'Fantastic team that truly cares about customer satisfaction. The communication was excellent, and they addressed every concern promptly. Our kitchen is now the heart of our home!',
+    date: '2024-05-08',
+    location: 'Pembroke Pines, FL',
+  },
+];
