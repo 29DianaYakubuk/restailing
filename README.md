@@ -2,7 +2,7 @@
 
 A modern, fully responsive multi-page website for a home remodeling and renovation company. Built with Next.js 15, TypeScript, and Tailwind CSS.
 
-## 🌟 Features
+##  Features
 
 ### User-Facing Features
 - **Responsive Design** - Optimized for mobile, tablet, and desktop devices
@@ -28,7 +28,7 @@ A modern, fully responsive multi-page website for a home remodeling and renovati
 - **Type Safety** - Full TypeScript implementation
 - **Modern CSS** - Tailwind CSS with custom configuration
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
@@ -82,7 +82,7 @@ restailing/
 └── public/                  # Static assets
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -116,7 +116,7 @@ npm run build
 npm start
 ```
 
-## 📝 Usage
+##  Usage
 
 ### Lead Form
 
@@ -147,7 +147,7 @@ All fields are validated using Zod:
 - **Service** - Select from available services
 - **Description** - Optional, max 180 characters
 
-## 🔌 API Routes
+##  API Routes
 
 ### POST /api/lead
 
@@ -195,7 +195,7 @@ Retrieve all leads (server-side only).
 }
 ```
 
-## 🎨 Customization
+##  Customization
 
 ### Colors
 
@@ -231,7 +231,7 @@ export const mapCenter = {
 };
 ```
 
-## 📱 Pages Overview
+##  Pages Overview
 
 | Route | Description |
 |-------|-------------|
@@ -244,7 +244,7 @@ export const mapCenter = {
 | `/contact` | Contact form and business information |
 | `/admin/leads` | Admin dashboard to manage submitted leads |
 
-## 🔐 Admin Panel
+##  Admin Panel
 
 Access the admin panel at `/admin/leads` to:
 
@@ -255,7 +255,7 @@ Access the admin panel at `/admin/leads` to:
 
 **Note:** In production, you should add authentication to protect this route.
 
-## 🚢 Deployment
+##  Deployment
 
 ### Vercel (Recommended)
 
@@ -273,7 +273,7 @@ This is a standard Next.js app and can be deployed to:
 - [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform)
 - Any Node.js hosting provider
 
-## 🔄 Future Enhancements
+##  Future Enhancements
 
 Potential features to add:
 
@@ -287,19 +287,3 @@ Potential features to add:
 - [ ] Real-time chat integration
 - [ ] Automated email responses
 - [ ] Payment processing integration
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-## 👨‍💻 Author
-
-Built with [Claude Code](https://claude.com/claude-code)
-
----
-
-**Note:** This is a demo project. Replace placeholder data (phone numbers, emails, addresses) with real information before deploying to production.
