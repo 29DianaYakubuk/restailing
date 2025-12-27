@@ -8,7 +8,7 @@ export interface LeadFormData {
   budget: string;
   startDate: string;
   service: string;
-  description: string;
+  description?: string;
 }
 
 export interface LeadWithMetadata extends LeadFormData {
