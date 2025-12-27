@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
-import LeadForm from '@/components/shared/LeadForm';
+import SimpleLeadForm from '@/components/shared/SimpleLeadForm';
 
 const benefits = [
   'Licensed and insured contractors',
@@ -51,7 +51,7 @@ export default function AboutSection() {
           </div>
 
           <div>
-            <LeadForm
+            <SimpleLeadForm
               variant="default"
               title="Start Your Project Today"
               subtitle="Get a free consultation and estimate"
