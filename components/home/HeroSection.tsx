@@ -1,4 +1,4 @@
-import LeadForm from '@/components/shared/LeadForm';
+import SimpleLeadForm from '@/components/shared/SimpleLeadForm';
 
 export default function HeroSection() {
   return (
@@ -47,7 +47,7 @@ export default function HeroSection() {
           </div>
 
           <div className="lg:block hidden">
-            <LeadForm
+            <SimpleLeadForm
               variant="default"
               title="Request a Free Consultation"
               subtitle="Start your home transformation today"

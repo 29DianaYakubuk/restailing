@@ -1,8 +1,8 @@
-# Premium Remodeling Website
+yf# Premium Remodeling Website
 
 A modern, fully responsive multi-page website for a home remodeling and renovation company. Built with Next.js 15, TypeScript, and Tailwind CSS.
 
-##  Features
+## Features
 
 ### User-Facing Features
 - **Responsive Design** - Optimized for mobile, tablet, and desktop devices
@@ -39,7 +39,7 @@ A modern, fully responsive multi-page website for a home remodeling and renovati
 - **Maps:** Google Maps iframe
 - **Package Manager:** npm
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 restailing/
@@ -82,7 +82,7 @@ restailing/
 └── public/                  # Static assets
 ```
 
-##  Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -116,7 +116,7 @@ npm run build
 npm start
 ```
 
-##  Usage
+## 📝 Usage
 
 ### Lead Form
 
@@ -147,7 +147,7 @@ All fields are validated using Zod:
 - **Service** - Select from available services
 - **Description** - Optional, max 180 characters
 
-##  API Routes
+## 🔌 API Routes
 
 ### POST /api/lead
 
@@ -195,7 +195,7 @@ Retrieve all leads (server-side only).
 }
 ```
 
-##  Customization
+## 🎨 Customization
 
 ### Colors
 
@@ -287,3 +287,12 @@ Potential features to add:
 - [ ] Real-time chat integration
 - [ ] Automated email responses
 - [ ] Payment processing integration
+
+##  License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+##  Contributing
+
+Contributions, issues, and feature requests are welcome!
+

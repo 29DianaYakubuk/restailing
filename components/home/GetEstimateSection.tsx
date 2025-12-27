@@ -1,4 +1,4 @@
-import LeadForm from '@/components/shared/LeadForm';
+import SimpleLeadForm from '@/components/shared/SimpleLeadForm';
 import StatsGrid from './StatsGrid';
 
 export default function GetEstimateSection() {
@@ -63,7 +63,7 @@ export default function GetEstimateSection() {
           </div>
 
           <div>
-            <LeadForm
+            <SimpleLeadForm
               variant="default"
               title="Request Your Free Estimate"
               subtitle="We'll contact you within 24 hours"
