@@ -10,33 +10,63 @@ export default function AdminLeadsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const storedLeads = localStorage.getItem('leads');
-    if (storedLeads) {
+    const fetchLeads = async () => {
       try {
-        setLeads(JSON.parse(storedLeads));
+        const response = await fetch('/api/lead');
+        if (response.ok) {
+          const result = await response.json();
+          setLeads(result.leads || []);
+        } else {
+          console.error('Failed to fetch leads');
+        }
       } catch (error) {
-        console.error('Error parsing leads:', error);
+        console.error('Error fetching leads:', error);
+      } finally {
+        setLoading(false);
       }
-    }
-    setLoading(false);
+    };
+
+    fetchLeads();
   }, []);
 
-  const handleClearAll = () => {
+
+  const handleClearAll = async () => {
     if (
       confirm(
         'Are you sure you want to delete all leads? This action cannot be undone.'
       )
     ) {
-      localStorage.removeItem('leads');
-      setLeads([]);
+      try {
+        // Delete all leads one by one
+        await Promise.all(
+          leads.map((lead) =>
+            fetch(`/api/lead?id=${lead.id}`, { method: 'DELETE' })
+          )
+        );
+        setLeads([]);
+      } catch (error) {
+        console.error('Error deleting all leads:', error);
+        alert('Failed to delete all leads. Please try again.');
+      }
     }
   };
 
-  const handleDeleteLead = (id: string) => {
+  const handleDeleteLead = async (id: string) => {
     if (confirm('Are you sure you want to delete this lead?')) {
-      const updatedLeads = leads.filter((lead) => lead.id !== id);
-      setLeads(updatedLeads);
-      localStorage.setItem('leads', JSON.stringify(updatedLeads));
+      try {
+        const response = await fetch(`/api/lead?id=${id}`, {
+          method: 'DELETE',
+        });
+
+        if (response.ok) {
+          setLeads(leads.filter((lead) => lead.id !== id));
+        } else {
+          throw new Error('Failed to delete lead');
+        }
+      } catch (error) {
+        console.error('Error deleting lead:', error);
+        alert('Failed to delete lead. Please try again.');
+      }
     }
   };
 

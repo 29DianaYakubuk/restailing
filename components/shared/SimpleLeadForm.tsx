@@ -39,25 +39,20 @@ export default function SimpleLeadForm({
     setShowSuccess(false);
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch('/api/simple-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-      console.log('Simple lead submitted:', data);
-
-      // Save to localStorage
-      if (typeof window !== 'undefined') {
-        const simpleLead = {
-          ...data,
-          id: Date.now().toString(),
-          createdAt: new Date().toISOString(),
-          type: 'simple',
-        };
-        const existingLeads = JSON.parse(
-          localStorage.getItem('simpleLeads') || '[]'
-        );
-        existingLeads.push(simpleLead);
-        localStorage.setItem('simpleLeads', JSON.stringify(existingLeads));
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
       }
+
+      const result = await response.json();
+      console.log('Simple lead submitted:', result.data);
 
       setShowSuccess(true);
       reset();

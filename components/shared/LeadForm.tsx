@@ -56,14 +56,7 @@ export default function LeadForm({
       }
 
       const result = await response.json();
-
-      if (typeof window !== 'undefined') {
-        const existingLeads = JSON.parse(
-          localStorage.getItem('leads') || '[]'
-        );
-        existingLeads.push(result.data);
-        localStorage.setItem('leads', JSON.stringify(existingLeads));
-      }
+      console.log('Lead submitted:', result.data);
 
       setShowSuccess(true);
       reset();
