@@ -1,9 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { simpleLeadFormSchema } from '@/lib/validations/simpleLeadForm';
-import { supabase } from '@/lib/supabase';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 export async function POST(request: NextRequest) {
   try {
+    if (!isSupabaseConfigured()) {
+      throw new Error(
+        'Supabase is not configured. Please set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables.'
+      );
+    }
+
     const body = await request.json();
 
     const validated = simpleLeadFormSchema.parse(body);
@@ -69,6 +75,12 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   try {
+    if (!isSupabaseConfigured()) {
+      throw new Error(
+        'Supabase is not configured. Please set environment variables.'
+      );
+    }
+
     const { data: simpleLeads, error } = await supabase
       .from('simple_leads')
       .select('*')
