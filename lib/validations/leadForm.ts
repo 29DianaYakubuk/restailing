@@ -7,7 +7,7 @@ export const leadFormSchema = z.object({
   phone: z
     .string()
     .min(10, 'Phone number must be at least 10 digits')
-    .regex(/^[\d\s\-\(\)]+$/, 'Please enter a valid phone number'),
+    .regex(/^[\d\s\-\(\)\+\.]+$/, 'Please enter a valid phone number'),
   address: z.string().min(5, 'Address is required'),
   postalCode: z
     .string()

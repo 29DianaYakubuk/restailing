@@ -6,7 +6,7 @@ export const simpleLeadFormSchema = z.object({
   phone: z
     .string()
     .min(10, 'Phone number must be at least 10 digits')
-    .regex(/^[\d\s\-\(\)]+$/, 'Please enter a valid phone number'),
+    .regex(/^[\d\s\-\(\)\+\.]+$/, 'Please enter a valid phone number'),
   service: z.string().min(1, 'Please select a service'),
 });
 
