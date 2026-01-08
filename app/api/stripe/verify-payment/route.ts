@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
 
     // Retrieve session from Stripe
     const session = await stripe.checkout.sessions.retrieve(sessionId, {
-      expand: ['payment_intent'],
+      expand: ['payment_intent', 'payment_intent.latest_charge'],
     });
 
     if (!session) {
@@ -52,6 +52,7 @@ export async function GET(request: NextRequest) {
 
     // Update payment with details from Stripe
     const paymentIntent = session.payment_intent as Stripe.PaymentIntent;
+    const latestCharge = paymentIntent?.latest_charge as Stripe.Charge | null;
 
     const { error: updateError } = await supabase
       .from('payments')
@@ -59,7 +60,7 @@ export async function GET(request: NextRequest) {
         status: session.payment_status === 'paid' ? 'succeeded' : 'failed',
         payment_intent_id: paymentIntent?.id || null,
         payment_method_type: paymentIntent?.payment_method_types?.[0] || null,
-        receipt_url: (paymentIntent?.charges?.data[0] as any)?.receipt_url || null,
+        receipt_url: latestCharge?.receipt_url || null,
         customer_email: session.customer_details?.email || null,
         updated_at: new Date().toISOString(),
       })
